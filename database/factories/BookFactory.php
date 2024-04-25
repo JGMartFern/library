@@ -20,6 +20,7 @@ class BookFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'author' => fake()->name(),
+            'image_url' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png',
             'format' => $formats[rand(0, 3)],
             'borrower' => null,
             'start_date' => null,

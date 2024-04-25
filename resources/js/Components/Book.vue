@@ -43,7 +43,7 @@ function formatDate(date) {
             </div>
         </div>
         <div class="book-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png">
+            <img :src="book.image_url">
         </div>
         <div class="timeout" v-if="isTimedOut(book.limit_date)">Caducado</div>
 

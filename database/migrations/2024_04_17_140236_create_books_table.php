@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
+            $table->string('image_url');
             $table->string('format');
             $table->string('borrower')->nullable();
             $table->date('start_date')->nullable();
