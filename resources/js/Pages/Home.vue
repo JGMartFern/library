@@ -28,7 +28,7 @@ fetchData();
 
 async function fetchData() {
 
-    const res = await fetch('/api/book/list');
+    const res = await fetch('/book/list');
     books.value = await res.json();
 }
 
@@ -76,6 +76,12 @@ function showBorrowedBooks() {
 
 </template>
 <style>
+
+.book-container {
+    width: 70%;
+    margin: auto;
+}
+
 .main-container {
     padding: 50px;
     background-color: pink;
@@ -88,6 +94,10 @@ function showBorrowedBooks() {
     align-items: center;
     font-size: 18px;
     font-family: 'Pacifico','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#search {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .available:hover,

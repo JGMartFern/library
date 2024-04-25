@@ -6,7 +6,7 @@
 </template>
 <style>
 .big-title {
-    font-family: Pacifico, sans-serif;
+    font-family: 'Pacifico','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     letter-spacing: 8px;
     font-size: 48px;
     text-align: center;

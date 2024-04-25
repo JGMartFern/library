@@ -49,11 +49,11 @@ function formatLimitDate(date) {
 }
 
 function returnToHome() {
-    window.location.href = '/api/home';
+    window.location.href = '/';
 }
 
 async function fetchBook() {
-    const res = await fetch('/api/book/' + localStorage.id);
+    const res = await fetch('/book/' + localStorage.id);
     book.value = await res.json();
 }
 
@@ -69,19 +69,22 @@ async function submitLoan() {
     };
     const res = await fetch('/api/book/takeLoan/' + book.value.id, requestOptions);
     const data = await res.json();
-    console.log(data);
+    window.location.href = '/success'
 }
 
 </script>
 <template>
+
     <Head title="Préstamo" />
     <div class="main-container min-h-screen">
-        <PageTitle/>
+        <PageTitle />
         <div class="info-box">
             <div><span class="description">Prestar libro</span></div>
             <div><span class="return" @click="returnToHome">Volver</span></div>
         </div>
-        <Book :book="book" :available=true />
+        <div class="book-container">
+            <Book :book="book" :available=true />
+        </div>
         <form @submit.prevent="submitLoan">
             <div class="form-group">
                 <p><label for="borrower">Nombre del prestatario</label></p>
@@ -95,7 +98,8 @@ async function submitLoan() {
                 </p>
             </div>
             <div class="alert alert-info">
-                <p>Tienes 30 días para devolver el préstamo. Fecha límite: <span class="date-warning">{{ formatLimitDate(limitDate) }}</span></p>
+                <p>Tienes 30 días para devolver el préstamo. Fecha límite: <span class="date-warning">{{
+                        formatLimitDate(limitDate) }}</span></p>
             </div>
             <div class="info-box warning">
                 <p>Si los datos son correctos, pulsa en el botón <span class="cursive">Realizar préstamo</span>.</p>
@@ -107,6 +111,12 @@ async function submitLoan() {
     </div>
 </template>
 <style>
+
+.book-container {
+    width: 70%;
+    margin: auto;
+}
+
 .main-container {
     padding: 50px;
     background-color: pink;
@@ -129,7 +139,7 @@ async function submitLoan() {
 
 .warning {
     font-size: 16px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .alert-info {
@@ -160,7 +170,6 @@ async function submitLoan() {
 }
 
 .button-option {
-    margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
