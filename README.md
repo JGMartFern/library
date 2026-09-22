@@ -1,18 +1,17 @@
-Utilizo XAMPP con Apache y MySQL, que es la base de datos por defecto y que está configurada para funcionar con el proyecto.
-La base de datos puede verse con phpMyAdmin.
+I used XAMPP with Apache and MySQL, which is the default database and it's configured to work with the project. The database can be reviewed with phpMyAdmin.
 
-Para crear y poblar automáticamente la base de datos, es necesario ejecutar en la terminal el siguiente comando:
+To create and populate the database automatically, it's needed to execute the following command in the terminal:
 
 php artisan migrate --seed
 
-A partir de ahí tendremos algo con lo que trabajar en localhost
+From there, we will have something to work with in localhost
 
-Como paso previo si hemos realizado cambios, introducimos en la terminal:
+As a previous step in case we introduced any changes, we introduce in the terminal:
 
 npm run build
 
-Si todo está correcto o si no hicimos cambios desde la última vez, podremos lanzar el proyecto utilizando el comando:
+If everything is correct or if we didn't make changes since last time, we can run the project using the command:
 
 php artisan serve
 
-En este punto podemos ir directamente a localhost:8000 y entraremos en la landing page.
+At this point, we can go straight to localhost:8000 and get to the landing page.
